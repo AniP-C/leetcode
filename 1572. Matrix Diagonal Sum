@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int diagonalSum(vector<vector<int>>& mat) {
+        int sum = 0;
+        int n = mat.size();
+        for (int i = 0 ; i < n ; i++){
+            sum = sum + mat[i][i];  // its for primary diagonal which is like ii or 11 22 33 44 .... everywhere
+            sum = sum + mat[i][n-1-i]; // its for secondary diagonal which is like same row and different columns , like n-1 will give the end columns and n-1-i will make sure it'll take it below and change the columns numbers
+        }
+        if(n%2!=0){ // this condition is for odd elements in the array / matrix as the common element which is added twice is subtracted
+            return sum-mat[n/2][n/2];  
+        }
+        else{
+            return sum; // if not sot he res is returned
+        }
+        
+    }
+};
