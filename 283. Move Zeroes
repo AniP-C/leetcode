@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    vector<int> vec= {1,0,2,3,4,0,5,0,0,6,7,8,0,9,0};
+    vector<int> vec1;
+    int n = vec.size();
+    
+    for(int i = 0 ;i < n ;i++){
+        if(vec[i] != 0){
+            vec1.push_back(vec[i]);
+            // cout << vec[i];
+        }
+    }
+    // for(auto it: vec1){
+    //     cout << it << endl;
+    
+    int n1 = vec1.size();
+    int diff = n-n1;
+    // cout << "vec : " << n << " vec1 : " << n1 << " diff : " << diff;
+     
+    for(int j = 0 ; j < diff ;j++){
+        vec1.push_back(0);
+    }
+    
+    for(auto it: vec1){
+        cout << it;
+    }
+
+}
